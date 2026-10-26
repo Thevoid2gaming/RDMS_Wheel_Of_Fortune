@@ -1,0 +1,17 @@
+{
+    "CompSci": [
+        "Algorithms", "HashMaps", "Discrete Structures", "Type Casting", "Programming Language"
+    ],
+    
+    "Movies" : [
+        "Spider-Man Brand New Day", "Backrooms", "Sinners", "Dune", "Micheal" 
+    ],
+
+    "Celebrities" :[
+        "Lebron James", "Micheal Jackson", "Denzel Washington", "Christiano Ronaldo", "John Cena" 
+    ],
+
+    "Landmarks" :[
+        "Statue of Liberty", "Leaning Tower of Pisa", "Stonehenge", "Times Square", "Golden Gate Bridge" 
+    ]
+}
