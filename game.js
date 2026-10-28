@@ -3,7 +3,7 @@ window.gameState = {
   canGuess: false,
   currentValue: 0,
   activePlayer: 1,
-  scores: { 1: 0, 2: 0 }
+  scores: { 1: 0, 2: 0, 3: 0 }
 };
 
 let answer = "";
@@ -11,7 +11,7 @@ let guessedLetters = [];
 let squares = [];
 
 function switchTurn() {
-  window.gameState.activePlayer = window.gameState.activePlayer === 1 ? 2 : 1;
+  window.gameState.activePlayer = window.gameState.activePlayer === 1 ? 2 : window.gameState.activePlayer === 2 ? 3 : 1;
   window.gameState.canSpin = true;
   window.gameState.canGuess = false;
 
@@ -23,6 +23,7 @@ function switchTurn() {
 function updateScoreboard() {
   document.getElementById("player-1-score").textContent = `$${window.gameState.scores[1]}`;
   document.getElementById("player-2-score").textContent = `$${window.gameState.scores[2]}`;
+  document.getElementById("player-3-score").textContent = `$${window.gameState.scores[3]}`;
 }
 
 // Attach wheel listener
@@ -131,3 +132,25 @@ fetch("data/puzzles.json")
     document.getElementById("message").textContent = "Could not load data/puzzles.json.";
     console.error(error);
   });
+
+  const adImages = [
+    "Lasalle Ads/BKFM.png",
+    "Lasalle Ads/BKFM2.png",
+    "Lasalle Ads/SPORTAD.png"
+  ];
+
+  let currentAdIndex = 0;
+  const adImage = document.getElementById("AD1");
+
+  // Function to show the next ad
+    function showNextAd() {
+        adImage.src = adImages[currentAdIndex];
+        currentAdIndex = (currentAdIndex + 1) % adImages.length; // Loop back to start
+    }
+
+    // Initial load
+    showNextAd();
+
+    // Change ad every 10 seconds
+    setInterval(showNextAd, 10000);
+
