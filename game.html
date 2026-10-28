@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RDMS Wheel of Fortune - Play</title>
+  <link rel="stylesheet" href="css/wheel.css">
+  <link rel="stylesheet" href="css/board.css">
+  <script src="js/wheel.js" defer></script>
+  <script src="js/game.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h2>RDMS Wheel of Fortune</h2>
+  </header>
+
+  <section id="scoreboard">
+    <div class="player-card active" id="player-1-card">
+      <h3>Player 1</h3>
+      <p id="player-1-score">$0</p>
+    </div>
+    <div class="player-card" id="player-2-card">
+      <h3>Player 2</h3>
+      <p id="player-2-score">$0</p>
+    </div>
+  </section>
+
+  <main class="game-arena">
+    <!-- SVG Board -->
+    <div id="board-container">
+      <svg id="board" viewBox="0 0 1200 570" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer Frame -->
+        <rect x="15" y="140" width="1150" height="210" fill="teal" stroke="#008cff" stroke-width="15"/>
+        <rect x="55" y="50" width="1060" height="388" fill="teal" stroke="#008cff" stroke-width="12"/>
+        <rect x="30" y="150" width="1120" height="190" fill="teal" stroke="#00dfff" stroke-width="12"/>
+        <rect x="70" y="65" width="1030" height="355" fill="teal" stroke="#00dfff" stroke-width="15"/>
+
+        <!-- Puzzle Tiles Group -->
+        <g id="puzzle-tiles" fill="white" stroke="#101820" stroke-width="5">
+          <!-- Row 1: 12 squares -->
+          <rect x="78" y="80" width="78" height="75" fill="teal"/>
+          <rect x="160" y="80" width="78" height="75" fill="teal"/>
+          <rect x="245" y="80" width="78" height="75"/>
+          <rect x="330" y="80" width="78" height="75"/>
+          <rect x="415" y="80" width="78" height="75"/>
+          <rect x="500" y="80" width="78" height="75"/>
+          <rect x="585" y="80" width="78" height="75"/>
+          <rect x="670" y="80" width="78" height="75"/>
+          <rect x="755" y="80" width="78" height="75"/>
+          <rect x="840" y="80" width="78" height="75"/>
+          <rect x="925" y="80" width="78" height="75" fill="teal"/>
+          <rect x="1010" y="80" width="78" height="75" fill="teal"/>
+
+          <!-- Row 2: 14 squares -->
+          <rect x="43" y="165" width="73" height="75" fill="teal"/>
+          <rect x="125" y="165" width="73" height="75"/>
+          <rect x="209" y="165" width="73" height="75"/>
+          <rect x="290" y="165" width="73" height="75"/>
+          <rect x="372" y="165" width="73" height="75"/>
+          <rect x="450" y="165" width="73" height="75"/>
+          <rect x="528" y="165" width="73" height="75"/>
+          <rect x="606" y="165" width="73" height="75"/>
+          <rect x="684" y="165" width="73" height="75"/>
+          <rect x="762" y="165" width="73" height="75"/>
+          <rect x="840" y="165" width="73" height="75"/>
+          <rect x="918" y="165" width="73" height="75"/>
+          <rect x="996" y="165" width="73" height="75"/>
+          <rect x="1074" y="165" width="66" height="75" fill="teal"/>
+
+          <!-- Row 3: 14 squares -->
+          <rect x="45" y="250" width="73" height="75" fill="teal"/>
+          <rect x="125" y="250" width="73" height="75"/>
+          <rect x="209" y="250" width="73" height="75"/>
+          <rect x="290" y="250" width="73" height="75"/>
+          <rect x="372" y="250" width="73" height="75"/>
+          <rect x="450" y="250" width="73" height="75"/>
+          <rect x="528" y="250" width="73" height="75"/>
+          <rect x="606" y="250" width="73" height="75"/>
+          <rect x="684" y="250" width="73" height="75"/>
+          <rect x="762" y="250" width="73" height="75"/>
+          <rect x="840" y="250" width="73" height="75"/>
+          <rect x="918" y="250" width="73" height="75"/>
+          <rect x="996" y="250" width="73" height="75"/>
+          <rect x="1074" y="250" width="66" height="75" fill="teal"/>
+
+          <!-- Row 4: 12 squares -->
+          <rect x="76" y="335" width="78" height="75" fill="teal"/>
+          <rect x="160" y="335" width="78" height="75" fill="teal"/>
+          <rect x="245" y="335" width="78" height="75"/>
+          <rect x="330" y="335" width="78" height="75"/>
+          <rect x="415" y="335" width="78" height="75"/>
+          <rect x="500" y="335" width="78" height="75"/>
+          <rect x="585" y="335" width="78" height="75"/>
+          <rect x="670" y="335" width="78" height="75"/>
+          <rect x="755" y="335" width="78" height="75"/>
+          <rect x="840" y="335" width="78" height="75"/>
+          <rect x="925" y="335" width="78" height="75" fill="teal"/>
+          <rect x="1010" y="335" width="78" height="75" fill="teal"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Active Wheel & Game Messages -->
+    <div class="controls-panel">
+      <fieldset class="ui-wheel-of-fortune" style="--_items: 12;">
+        <ul data-itemCount="12">
+          <li>$1000</li>
+          <li>$2000</li>
+          <li>$3000</li>
+          <li>$4000</li>
+          <li>$5000</li>
+          <li>$6000</li>
+          <li>$7000</li>
+          <li>$8000</li>
+          <li>$9000</li>
+          <li>$10000</li>
+          <li>$11000</li>
+          <li>$12000</li>
+        </ul>
+        <button type="button">SPIN</button>
+      </fieldset>
+
+      <div class="game-status">
+        <div id="category">Category: Loading...</div>
+        <p id="message">Player 1: Spin the wheel to begin!</p>
+        <p id="wrong">Wrong guesses: </p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  { "category": "COMPUTER SCIENCE", "answer": "ALGORITHMS" },
+  { "category": "COMPUTER SCIENCE", "answer": "HASHMAPS" },
+  { "category": "COMPUTER SCIENCE", "answer": "DISCRETE STRUCTURES" },
+  { "category": "COMPUTER SCIENCE", "answer": "PROGRAMMING LANGUAGE" },
+  { "category": "MOVIES", "answer": "DUNE" },
+  { "category": "MOVIES", "answer": "SPIDER MAN BRAND NEW DAY" },
+  { "category": "CELEBRITIES", "answer": "LEBRON JAMES" },
+  { "category": "CELEBRITIES", "answer": "DENZEL WASHINGTON" },
+  { "category": "LANDMARKS", "answer": "STATUE OF LIBERTY" },
+  { "category": "LANDMARKS", "answer": "GOLDEN GATE BRIDGE" },
+  { "category": "THING", "answer": "WIRELESS MOUSE" },
+  { "category": "PHRASE", "answer": "BACK UP YOUR FILES" },
+  { "category": "PERSON", "answer": "SOFTWARE DEVELOPER" },
+  { "category": "PLACE", "answer": "COMPUTER LAB" },
+  { "category": "THING", "answer": "MECHANICAL KEYBOARD" },
+  { "category": "PHRASE", "answer": "LEARNING TO CODE" },
+  { "category": "WHAT ARE YOU DOING?", "answer": "WRITING CODE" },
+  { "category": "PHRASE", "answer": "DEBUGGING THE PROGRAM" }
+]
