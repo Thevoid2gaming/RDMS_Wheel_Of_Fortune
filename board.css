@@ -89,3 +89,12 @@ svg#board {
   font-size: 0.95rem;
   color: #ff9d9d;
 }
+
+#AD1 {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 200px;
+  height: auto;
+  z-index: 1000;
+}
