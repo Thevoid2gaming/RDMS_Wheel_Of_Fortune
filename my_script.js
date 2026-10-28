@@ -12,6 +12,8 @@ fetch("wof.json")
         //get random category to display in the category div
         document.getElementById("category").textContent =
             "Category: " + puzzle.category;
+        document.getElementById("hint").textContent =
+            "Hint: " + puzzle.hint;
 
         let board = document.getElementById("board");
         let tiles = board.querySelectorAll("rect");
