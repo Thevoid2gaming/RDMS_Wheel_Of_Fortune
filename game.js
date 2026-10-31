@@ -48,33 +48,83 @@ fetch("WOF.json")
         document.getElementById("category").textContent = "Category: " + puzzle.category;
         document.getElementById("hint").textContent = "Hint: " + puzzle.hint;
 
-        const board = document.getElementById("board");
-        const allTiles = board.querySelectorAll("#puzzle-tiles rect");
+   const board = document.getElementById("board");
+const allTiles = board.querySelectorAll("#puzzle-tiles rect");
 
-        // Filter out border/padding teal rects
-        squares = Array.from(allTiles)
-            .filter(sq => sq.getAttribute("fill") !== "teal")
-            .sort((a, b) => {
-                let yA = parseFloat(a.getAttribute("y"));
-                let yB = parseFloat(b.getAttribute("y"));
+// Get the rows of puzzle tiles
+let rowPositions = [...new Set(
+  Array.from(allTiles).map(square => square.getAttribute("y"))
+)].sort((a, b) => Number(a) - Number(b));
 
-                if (yA !== yB) {
-                    return yA - yB;
-                }
+let tileRows = rowPositions.map(y =>
+  Array.from(allTiles)
+    .filter(square =>
+      square.getAttribute("y") === y &&
+      square.getAttribute("fill") !== "teal"
+    )
+    .sort((a, b) =>
+      Number(a.getAttribute("x")) - Number(b.getAttribute("x"))
+    )
+);
 
-                return parseFloat(a.getAttribute("x")) -
-                       parseFloat(b.getAttribute("x"));
-            });
+// Separate the answer into words
+let words = answer.toUpperCase().trim().split(/\s+/);
 
-        let letters = answer.replace(/ /g, "");
+// Organize words into rows without splitting them
+let rowWords = tileRows.map(() => []);
+let currentRow = 0;
 
-        squares.forEach((square, index) => {
-            if (index < letters.length) {
-                square.dataset.letter = letters[index];
-                square.dataset.used = "true";
-            }
-        });
+words.forEach(word => {
+  while (currentRow < tileRows.length) {
+    let used = rowWords[currentRow].reduce(
+      (total, w) => total + w.length, 0
+    );
 
+    let spaces = Math.max(0, rowWords[currentRow].length);
+    let needed = used + spaces + word.length;
+
+    if (needed <= tileRows[currentRow].length) {
+      rowWords[currentRow].push(word);
+      break;
+    }
+
+    currentRow++;
+  }
+});
+
+// Place the letters on the board
+squares = [];
+
+rowWords.forEach((wordsInRow, rowIndex) => {
+  let row = tileRows[rowIndex];
+
+  let totalLetters = wordsInRow.reduce(
+    (total, word) => total + word.length, 0
+  );
+
+  let totalSpaces = Math.max(0, wordsInRow.length - 1);
+  let totalSlots = totalLetters + totalSpaces;
+
+  let start = Math.floor((row.length - totalSlots) / 2);
+  let position = start;
+
+  wordsInRow.forEach((word, wordIndex) => {
+    for (let letter of word) {
+      let square = row[position];
+
+      square.dataset.letter = letter;
+      square.dataset.used = "true";
+
+      squares.push(square);
+      position++;
+    }
+
+    // Leave one empty square between words
+    if (wordIndex < wordsInRow.length - 1) {
+      position++;
+    }
+  });
+});
         document.addEventListener("keydown", function(event) {
             if (!window.gameState.canGuess) {
                 return;
@@ -148,4 +198,5 @@ fetch("WOF.json")
         document.getElementById("message").textContent = "Could not load WOF.json.";
         console.error(error);
     });
+
 
