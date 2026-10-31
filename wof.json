@@ -1,52 +1,92 @@
 [
-    {
-        "category": "THING",
-        "answer": "WIRELESS MOUSE",
-        "hint": "A computer accessory"
-    },
-    {
-        "category": "PHRASE",
-        "answer": "BACK UP YOUR FILES",
-        "hint": "A good habit for protecting data"
-    },
-    {
-        "category": "PERSON",
-        "answer": "SOFTWARE DEVELOPER",
-        "hint": "Someone who creates computer programs"
-    },
-    {
-        "category": "PLACE",
-        "answer": "COMPUTER LAB",
-        "hint": "A room filled with computers"
-    },
-    {
-        "category": "THING",
-        "answer": "MECHANICAL KEYBOARD",
-        "hint": "A popular computer accessory"
-    },
-    {
-        "category": "PHRASE",
-        "answer": "LEARNING TO CODE",
-        "hint": "A useful skill for computer science students"
-    },
-    {
-        "category": "BEFORE & AFTER",
-        "answer": "MOUSE PAD THAI",
-        "hint": "A computer accessory combined with a popular dish"
-    },
-    {
-        "category": "WHAT ARE YOU DOING?",
-        "answer": "WRITING CODE",
-        "hint": "Creating instructions for a computer"
-    },
-    {
-        "category": "THING",
-        "answer": "WIRELESS INTERNET CONNECTION",
-        "hint": "Lets devices connect to a network without cables"
-    },
-    {
-        "category": "PHRASE",
-        "answer": "DEBUGGING THE PROGRAM",
-        "hint": "Finding and fixing errors in code"
-    }
+  {
+    category: "COMPUTER SCIENCE",
+    answer: "ALGORITHMS",
+    hint: "Step-by-step instructions used to solve a problem"
+  },
+  {
+    category: "COMPUTER SCIENCE",
+    answer: "HASHMAPS",
+    hint: "A data structure that stores information using keys and values"
+  },
+  {
+    category: "COMPUTER SCIENCE",
+    answer: "DISCRETE STRUCTURES",
+    hint: "A branch of math that studies logic, sets, and graphs"
+  },
+  {
+    category: "COMPUTER SCIENCE",
+    answer: "PROGRAMMING LANGUAGE",
+    hint: "A language used to write instructions a computer can execute"
+  },
+  {
+    category: "MOVIES",
+    answer: "DUNE",
+    hint: "A science fiction movie set on a desert planet"
+  },
+  {
+    category: "MOVIES",
+    answer: "SPIDER MAN BRAND NEW DAY",
+    hint: "A Spider-Man movie featuring Peter Parker"
+  },
+  {
+    category: "CELEBRITIES",
+    answer: "LEBRON JAMES",
+    hint: "A famous basketball player known as King James"
+  },
+  {
+    category: "CELEBRITIES",
+    answer: "DENZEL WASHINGTON",
+    hint: "An award-winning actor known for Training Day"
+  },
+  {
+    category: "LANDMARKS",
+    answer: "STATUE OF LIBERTY",
+    hint: "A famous statue in New York Harbor"
+  },
+  {
+    category: "LANDMARKS",
+    answer: "GOLDEN GATE BRIDGE",
+    hint: "A famous red-orange bridge in San Francisco"
+  },
+  {
+    category: "THING",
+    answer: "WIRELESS MOUSE",
+    hint: "A computer accessory used to move the cursor without a cable"
+  },
+  {
+    category: "PHRASE",
+    answer: "BACK UP YOUR FILES",
+    hint: "A reminder to make copies of important digital information"
+  },
+  {
+    category: "PERSON",
+    answer: "SOFTWARE DEVELOPER",
+    hint: "Someone who creates and maintains computer programs"
+  },
+  {
+    category: "PLACE",
+    answer: "COMPUTER LAB",
+    hint: "A room where people use computers for learning or work"
+  },
+  {
+    category: "THING",
+    answer: "MECHANICAL KEYBOARD",
+    hint: "A keyboard with individual switches under each key"
+  },
+  {
+    category: "PHRASE",
+    answer: "LEARNING TO CODE",
+    hint: "Developing the skills needed to write computer instructions"
+  },
+  {
+    category: "WHAT ARE YOU DOING?",
+    answer: "WRITING CODE",
+    hint: "Creating instructions for a computer"
+  },
+  {
+    category: "PHRASE",
+    answer: "DEBUGGING THE PROGRAM",
+    hint: "Finding and fixing errors in computer software"
+  }
 ]
